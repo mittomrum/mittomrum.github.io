@@ -1,0 +1,14 @@
+section:
+  name: Achievements
+  id: achievements
+  enable: true
+  weight: 6
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your achievements achievements
+achievements:
+- title: Drove a truck in Norway
+  image: /images/sections/achievements/norway.jpg
+  summary: Picture from the time I was in norway
