@@ -36,6 +36,12 @@ jobs:
       run: hugo --minify
 
     # push the generated content into the `gh-pages` branch.
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3.9.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./public
 
     - name: 📂 Deploy to StableHost
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -43,4 +49,5 @@ jobs:
         server: ftp.tomrum.nu
         username: gitupload@tomrum.nu
         password: ${{ secrets.ftp_password }}
-        server-dir: /
+        local_dir: ./public/
+        server-dir: /public/
